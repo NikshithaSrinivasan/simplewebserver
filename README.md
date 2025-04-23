@@ -82,9 +82,10 @@ httpd.serve_forever()
 ```
 
 
-
+```
 # OUTPUT:
-simplewebserver/Screenshot 2025-04-23 225033.png
+![nikshi](https://github.com/user-attachments/assets/0725f7ff-a0d6-45e2-a416-cbfa2064fc20)
+
 
 ![alt text](<nash 2.png>)
 
