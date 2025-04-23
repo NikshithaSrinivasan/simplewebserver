@@ -88,7 +88,8 @@ httpd.serve_forever()
 ![nikshi](https://github.com/user-attachments/assets/0725f7ff-a0d6-45e2-a416-cbfa2064fc20)
 
 
-![alt text](<nash 2.png>)
+![nikshi](https://github.com/user-attachments/assets/4f2c397c-bc11-4727-af47-9e9fc0bf7b50)
+
 
 
 # RESULT:
