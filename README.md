@@ -39,8 +39,8 @@ with socketserver.TCPServer(("", PORT), MyHandler) as httpd:
     httpd.serve_forever()
 ```
 # OUTPUT:
+![Screenshot 2025-04-23 195009](https://github.com/user-attachments/assets/3ce353e8-2e37-4dc0-8d1e-cf8405bf2b85)
 
-![Screenshot 2025-04-23 190642](https://github.com/user-attachments/assets/7cd2dd3a-eb34-4e12-a58a-af24612907f2)
 
 
 ![Screenshot 2025-04-23 105542](https://github.com/user-attachments/assets/0fd40cdc-6f94-4c8c-a516-28c8b971331a)
