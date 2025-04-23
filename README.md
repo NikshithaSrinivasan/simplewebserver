@@ -30,15 +30,17 @@ content='''
     <title>TCP/IP Protocol Suite</title>
 </head>
 <body>
-    <h1>TCP/IP Protocol Suite</h1>
+    <h1>TCP/IP Protocol</h1>
     <ul>
         <li><strong>Application Layer</strong>
             <ul>
-                <li>HTTP, HTTPS</li>
-                <li>FTP, TFTP</li>
-                <li>SMTP, POP3, IMAP</li>
+                <li>HTTP</li>
+                <li>FTP</li>
+                <li>SNMP</li>
+                <li>RDP</li>
+                <li>SMTPP</li>
                 <li>DNS</li>
-                <li>Telnet, SSH</li>
+                <li>Telnet</li>
             </ul>
         </li>
         <li><strong>Transport Layer</strong>
@@ -49,16 +51,19 @@ content='''
         </li>
         <li><strong>Internet Layer</strong>
             <ul>
+                <li>IGMP</li>
+                <li>IPSec</li>
                 <li>IP (IPv4, IPv6)</li>
-                <li>ICMP, IGMP</li>
+                <li>ICMP</li>
                 <li>ARP</li>
             </ul>
         </li>
         <li><strong>Network Access Layer</strong>
             <ul>
-                <li>Ethernet</li>
-                <li>Wi-Fi</li>
+                <li>Ethernet(IEEE 802.3)</li>
+                <li>Token Ring</li>
                 <li>PPP</li>
+                <li>Frame Relay</li>
             </ul>
         </li>
     </ul>
@@ -84,7 +89,8 @@ httpd.serve_forever()
 ```
 # OUTPUT:
 
-![Screenshot 2025-04-23 155922](https://github.com/user-attachments/assets/f6d4dcfb-afac-4739-9682-e3ca86bbf553)
+![Screenshot 2025-04-23 190642](https://github.com/user-attachments/assets/7cd2dd3a-eb34-4e12-a58a-af24612907f2)
+
 
 ![Screenshot 2025-04-23 105542](https://github.com/user-attachments/assets/0fd40cdc-6f94-4c8c-a516-28c8b971331a)
 
