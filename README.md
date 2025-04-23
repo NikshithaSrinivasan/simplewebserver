@@ -22,105 +22,72 @@ Testing the webserver.
 
 # PROGRAM:
 ```python
-from http.server import HTTPServer, BaseHTTPRequestHandler
-content = """
-<!DOCTYPE html>
-<html lang="en">
+from http.server import HTTPServer,BaseHTTPRequestHandler
+
+content='''
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>laptop configuration</title>
+    <title>TCP/IP Protocol Suite</title>
 </head>
-<style>
-    body{
-        background-color:aqua;
-    }
-
-    table{
-        background-color:hotpink;
-        border-collapse: collapse;
-        box-shadow: 0;
-        margin: 60px;
-        text-align: center;
-        color: black;
-    }
-    header{
-        font-size: 420%;
-        background-color: cornsilk;
-    }
-
-</style>
 <body>
-    <center>
-        <header>
-            MY LAPTOP CONFIGURATION
-        </header>
-    <table border="4px" width="600" height="400">
-        <div class="heading">
-        <tr style="font-size: x-large;">
-            <th>S.NO</th>
-            <th>COMPONENTS</th>
-            <th>DETAILS</th>
-        </tr>
-        </div>
-        <tr>
-            <th>1</th>
-            <th style="font-style: inherit;">PROCESSOR(CPU)</th>
-            <td>13th Gen i5-1335U</td>
-        </tr>
-        <tr>
-            <th>2</th>
-            <th style="font-style: inherit;">MEMORY(RAM)</th>
-            <td>16.0 GB</td>
-        </tr>
-        <tr>
-            <th>3</th>
-            <th style="font-style: inherit;">STORAGE</th>
-            <td>512GB SSD</td>
-        </tr>
-        <tr>
-            <th>4</th>
-            <th style="font-style: inherit;">DISPLAY</th>
-            <td>15.6-inch Full HD (1920x1080)</td>
-        </tr>
-        <tr>
-            <th>5</th>
-            <th style="font-style: inherit;">GRAPHICS(GPU)</th>
-            <td>Integrated Intel UHD</td>
-        </tr>
-        <tr>
-            <th>6</th>
-            <th style="font-style: inherit;">BATTERY</th>
-            <td>45 Wh, Up to 8 hours</td>
-        </tr>
-        <tr>
-            <th>7</th>
-            <th style="font-style: inherit;">OPERATING SYSTEM</th>
-            <td>Windows 10 Home</td>
-        </tr>
-
-    </table>
-    </center>
+    <h1>TCP/IP Protocol Suite</h1>
+    <ul>
+        <li><strong>Application Layer</strong>
+            <ul>
+                <li>HTTP, HTTPS</li>
+                <li>FTP, TFTP</li>
+                <li>SMTP, POP3, IMAP</li>
+                <li>DNS</li>
+                <li>Telnet, SSH</li>
+            </ul>
+        </li>
+        <li><strong>Transport Layer</strong>
+            <ul>
+                <li>TCP</li>
+                <li>UDP</li>
+            </ul>
+        </li>
+        <li><strong>Internet Layer</strong>
+            <ul>
+                <li>IP (IPv4, IPv6)</li>
+                <li>ICMP, IGMP</li>
+                <li>ARP</li>
+            </ul>
+        </li>
+        <li><strong>Network Access Layer</strong>
+            <ul>
+                <li>Ethernet</li>
+                <li>Wi-Fi</li>
+                <li>PPP</li>
+            </ul>
+        </li>
+    </ul>
 </body>
 </html>
-"""
-class myhandler(BaseHTTPRequestHandler):
+
+'''
+
+class MyServer(BaseHTTPRequestHandler):
     def do_GET(self):
-        print("request received")
-        self.send_response(200)
-        self.send_header('content-type', 'text/html; charset=utf-8')
+        print("Get request received...")
+        self.send_response(200) 
+        self.send_header("content-type", "text/html")       
         self.end_headers()
         self.wfile.write(content.encode())
-server_address = ('',8000)
-httpd = HTTPServer(server_address,myhandler)
-print("my webserver is running...")
+
+print("This is my webserver") 
+server_address =('',8000)
+httpd = HTTPServer(server_address,MyServer)
 httpd.serve_forever()
+
 
 ```
 # OUTPUT:
-![Screenshot 2025-04-21 110815](https://github.com/user-attachments/assets/2c0e762e-c6a3-4c3f-9930-f92ff451acb0)
 
-![Screenshot 2025-04-21 110835](https://github.com/user-attachments/assets/98dbb9c3-49e3-4aa4-ac9e-281b13576dc4)
+![Screenshot 2025-04-23 155922](https://github.com/user-attachments/assets/f6d4dcfb-afac-4739-9682-e3ca86bbf553)
+
+![Screenshot 2025-04-23 105542](https://github.com/user-attachments/assets/0fd40cdc-6f94-4c8c-a516-28c8b971331a)
+
 
 # RESULT:
 The program for implementing simple webserver is executed successfully.
