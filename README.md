@@ -1,6 +1,6 @@
 # EX01 Developing a Simple Webserver
 
-# Date:19/04/2025
+# Date:23.10.2025
 # AIM:
 To develop a simple webserver to serve html pages and display the configuration details of laptop.
 
@@ -21,71 +21,22 @@ Serving the HTML pages.
 Testing the webserver.
 
 # PROGRAM:
-```python
-from http.server import HTTPServer,BaseHTTPRequestHandler
+```
+import http.server
+import socketserver
 
-content='''
-<html>
-<head>
-    <title>TCP/IP Protocol Suite</title>
-</head>
-<body>
-    <h1>TCP/IP Protocol</h1>
-    <ul>
-        <li><strong>Application Layer</strong>
-            <ul>
-                <li>HTTP</li>
-                <li>FTP</li>
-                <li>SNMP</li>
-                <li>RDP</li>
-                <li>SMTPP</li>
-                <li>DNS</li>
-                <li>Telnet</li>
-            </ul>
-        </li>
-        <li><strong>Transport Layer</strong>
-            <ul>
-                <li>TCP</li>
-                <li>UDP</li>
-            </ul>
-        </li>
-        <li><strong>Internet Layer</strong>
-            <ul>
-                <li>IGMP</li>
-                <li>IPSec</li>
-                <li>IP (IPv4, IPv6)</li>
-                <li>ICMP</li>
-                <li>ARP</li>
-            </ul>
-        </li>
-        <li><strong>Network Access Layer</strong>
-            <ul>
-                <li>Ethernet(IEEE 802.3)</li>
-                <li>Token Ring</li>
-                <li>PPP</li>
-                <li>Frame Relay</li>
-            </ul>
-        </li>
-    </ul>
-</body>
-</html>
+PORT = 8000
 
-'''
-
-class MyServer(BaseHTTPRequestHandler):
+class MyHandler(http.server.SimpleHTTPRequestHandler):
     def do_GET(self):
-        print("Get request received...")
-        self.send_response(200) 
-        self.send_header("content-type", "text/html")       
+        self.send_response(200)
+        self.send_header("Content-type", "text/html")
         self.end_headers()
-        self.wfile.write(content.encode())
+        self.wfile.write(b"<html><body><h1>Hi Hello</h1></body></html>")
 
-print("This is my webserver") 
-server_address =('',8000)
-httpd = HTTPServer(server_address,MyServer)
-httpd.serve_forever()
-
-
+with socketserver.TCPServer(("", PORT), MyHandler) as httpd:
+    print(f"Serving at port {PORT}")
+    httpd.serve_forever()
 ```
 # OUTPUT:
 
